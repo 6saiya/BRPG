@@ -1,1 +1,0 @@
-country MSG ==> map MSG ==> render() 
