@@ -37,9 +37,11 @@
     }
 
     function test() {
-        Laya.loader.load(["res/atlas/fight.atlas","res/atlas/country.atlas"],Laya.Handler.create(this,function() {
-            LayaSample.fight = new Fight();
-            Laya.stage.addChild(LayaSample.fight);
+        Laya.loader.load(["res/atlas/fight.atlas","res/atlas/country.atlas","res/atlas/logon.atlas"],Laya.Handler.create(this,function() {
+            // LayaSample.fight = new Fight();
+            // Laya.stage.addChild(LayaSample.fight);
+            LayaSample.logGame = new LogGame();
+            Laya.stage.addChild(LayaSample.logGame);
         }),null,Laya.Loader.ATLAS)
         
     }

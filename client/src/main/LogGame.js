@@ -14,7 +14,6 @@ var LogGame = (function(_super){
         // this.getChildByName('test').on(Laya.Event.CLICK,this,this.test1);
         this.getChildByName('test').on(Laya.Event.CLICK,this,this.test);
         this.getChildByName('test').visible = false;
-        console.log(md5("s"));
     }
     Laya.class(LogGame,"LogGame",_super);
 
@@ -33,7 +32,7 @@ var LogGame = (function(_super){
                 type:"GET",
                 data:{
                     username:user.userName,
-                    password:md5(user.passWord)
+                    password:user.passWord
                 },
                 success:function (res) {
                     if(res != "密码错误！" && res != "密码错误！"){
