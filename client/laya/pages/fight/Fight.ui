@@ -28,45 +28,6 @@
         },
         {
             "x":15,
-            "type":"Image",
-            "props":{"y":491,"x":631,"width":120,"skin":"country/country0.png","scaleY":0.2,"scaleX":0.2,"height":232},
-            "nodeParent":1,
-            "label":"Image",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "compId":4,
-            "child":[
-                ]
-        },
-        {
-            "x":15,
-            "type":"Image",
-            "props":{"y":237,"x":941,"skin":"country/country2.png","scaleY":0.2,"scaleX":0.2},
-            "nodeParent":1,
-            "label":"Image",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "compId":5,
-            "child":[
-                ]
-        },
-        {
-            "x":15,
-            "type":"Image",
-            "props":{"y":528,"x":434,"skin":"comp/generals02-01.png","scaleY":0.5,"scaleX":0.5},
-            "nodeParent":1,
-            "label":"Image",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "compId":6,
-            "child":[
-                ]
-        },
-        {
-            "x":15,
             "type":"Box",
             "props":{"y":230,"x":228,"width":201,"var":"police","height":297},
             "nodeParent":1,
@@ -80,7 +41,7 @@
                 {
                     "x":30,
                     "type":"Image",
-                    "props":{"y":1,"x":73,"skin":"country/country1.png","scaleY":0.15,"scaleX":0.15,"name":"item0"},
+                    "props":{"y":1,"x":73,"skin":"country/country2.png","scaleY":0.15,"scaleX":0.15,"name":"item0"},
                     "nodeParent":29,
                     "label":"Image(item0)",
                     "isDirectory":false,
@@ -93,7 +54,7 @@
                 {
                     "x":30,
                     "type":"Image",
-                    "props":{"y":35,"x":169,"skin":"country/country1.png","scaleY":0.15,"scaleX":0.15,"name":"item1"},
+                    "props":{"y":35,"x":169,"skin":"country/country6.png","scaleY":0.15,"scaleX":0.15,"name":"item1"},
                     "nodeParent":29,
                     "label":"Image(item1)",
                     "isDirectory":false,
@@ -106,7 +67,7 @@
                 {
                     "x":30,
                     "type":"Image",
-                    "props":{"y":70,"x":75,"skin":"country/country1.png","scaleY":0.15,"scaleX":0.15,"name":"item2"},
+                    "props":{"y":70,"x":75,"skin":"country/country4.png","scaleY":0.15,"scaleX":0.15,"name":"item2"},
                     "nodeParent":29,
                     "label":"Image(item2)",
                     "isDirectory":false,
@@ -119,7 +80,7 @@
                 {
                     "x":30,
                     "type":"Image",
-                    "props":{"y":193,"x":86,"skin":"country/country1.png","scaleY":0.15,"scaleX":0.15,"name":"item3"},
+                    "props":{"y":193,"x":86,"skin":"country/country5.png","scaleY":0.15,"scaleX":0.15,"name":"item3"},
                     "nodeParent":29,
                     "label":"Image(item3)",
                     "isDirectory":false,
@@ -132,7 +93,7 @@
                 {
                     "x":30,
                     "type":"Image",
-                    "props":{"y":231,"x":87,"skin":"country/country1.png","scaleY":0.15,"scaleX":0.15,"name":"item4"},
+                    "props":{"y":231,"x":87,"skin":"country/country3.png","scaleY":0.15,"scaleX":0.15,"name":"item4"},
                     "nodeParent":29,
                     "label":"Image(item4)",
                     "isDirectory":false,

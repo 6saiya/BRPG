@@ -5,6 +5,7 @@ var Dialog=laya.ui.Dialog;
 var FightUI=(function(_super){
 		function FightUI(){
 			
+		    this.police=null;
 
 			FightUI.__super.call(this);
 		}
@@ -18,7 +19,7 @@ var FightUI=(function(_super){
 
 		}
 
-		FightUI.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":0,"x":111,"width":1057,"skin":"map/bg_fight.jpg","height":720}},{"type":"Image","props":{"y":493,"x":323,"skin":"country/country1.png","scaleY":0.15,"scaleX":0.15}},{"type":"Image","props":{"y":491,"x":631,"width":120,"skin":"country/country0.png","scaleY":0.2,"scaleX":0.2,"height":232}},{"type":"Image","props":{"y":237,"x":941,"skin":"country/country2.png","scaleY":0.2,"scaleX":0.2}},{"type":"Image","props":{"y":528,"x":434,"skin":"comp/generals02-01.png","scaleY":0.5,"scaleX":0.5}}]};
+		FightUI.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":0,"x":111,"width":1057,"skin":"map/bg_fight.jpg","height":720}},{"type":"Box","props":{"y":230,"x":228,"width":201,"var":"police","height":297},"child":[{"type":"Image","props":{"y":1,"x":73,"skin":"country/country2.png","scaleY":0.15,"scaleX":0.15,"name":"item0"}},{"type":"Image","props":{"y":35,"x":169,"skin":"country/country6.png","scaleY":0.15,"scaleX":0.15,"name":"item1"}},{"type":"Image","props":{"y":70,"x":75,"skin":"country/country4.png","scaleY":0.15,"scaleX":0.15,"name":"item2"}},{"type":"Image","props":{"y":193,"x":86,"skin":"country/country5.png","scaleY":0.15,"scaleX":0.15,"name":"item3"}},{"type":"Image","props":{"y":231,"x":87,"skin":"country/country3.png","scaleY":0.15,"scaleX":0.15,"name":"item4"}},{"type":"Image","props":{"y":263,"x":88,"skin":"country/country1.png","scaleY":0.15,"scaleX":0.15,"name":"item5"}}]}]};
 		return FightUI;
 	})(View);
 var ChoiceServerUI=(function(_super){

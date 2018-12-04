@@ -57,9 +57,15 @@ var Fight = (function (_super) {
 		for (let i = 0; i < gameMap.length; i++) {
 			let thismap = new Laya.Box()
 			for (let j = 0; j < gameMap[i].solid; j++) {
-				let img = new Laya.Sprite();
-				img.loadImage("country/country0.png", gameMap[i].sitX+j*30, gameMap[i].sitY+j*30);
-				thismap.addChild(img)
+				let solid = new Laya.Sprite();
+				solid.loadImage("country/country0.png", gameMap[i].sitX+j*30, gameMap[i].sitY+j*30);
+				thismap.addChild(solid)
+				if (gameMap[i].hero) {
+					let hero = new Laya.Sprite();
+					hero.loadImage("comp/generals02-01.png", gameMap[i].sitX+j*30, gameMap[i].sitY+j*30);
+					thismap.addChild(hero)
+				}
+				
 			}
 			map.push(thismap);
 			mapSprint.addChild(map[i])

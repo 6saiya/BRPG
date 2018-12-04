@@ -14,7 +14,7 @@ let gameMap = [
         city : '咸阳',
         belong : '秦',
         solid : 3,
-        hero : '白起',
+        hero : '',
         sitX : 500,
         sitY : 200,
 
