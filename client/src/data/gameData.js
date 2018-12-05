@@ -39,3 +39,5 @@ let rountGame = 0;
 let nowPlayer = '合纵'
 
 let CountryPoliceData = [3,6,3,3,3,3]
+
+let sky = ['合纵', true]

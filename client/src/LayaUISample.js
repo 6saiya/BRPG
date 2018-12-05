@@ -28,11 +28,14 @@
     }
 
     function test() {
-        Laya.loader.load(["res/atlas/fight.atlas","res/atlas/country.atlas","res/atlas/logon.atlas","res/atlas/comp.atlas"],Laya.Handler.create(this,function() {
-            LayaSample.fight = new Fight();
-            Laya.stage.addChild(LayaSample.fight);
+        Laya.loader.load(["res/atlas/comp.atlas","res/atlas/btn.atlas",
+        "res/atlas/headPortrait.atlas","res/atlas/img.atlas",
+        "res/atlas/country.atlas","res/atlas/fight.atlas",
+        "res/atlas/home.atlas","res/atlas/pageDraw.atlas",
+        "res/atlas/pageRank.atlas","res/atlas/public.atlas"],Laya.Handler.create(this,function() {
+            LayaSample.Match = new Match();
+            Laya.stage.addChild(LayaSample.Match);
         }),null,Laya.Loader.ATLAS)
-        
     }
 })(window.LayaSample || (window.LayaSample = {}));
 

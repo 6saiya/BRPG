@@ -1,5 +1,6 @@
 let gameMap = [
     {
+        index : 0,
         name : '内史',
         city : '咸阳',
         belong : '秦',
@@ -7,9 +8,11 @@ let gameMap = [
         hero : '',
         sitX : 500,
         sitY : 350,
-
+        neighbor : [],
+        point : 1 ,
     },
     {
+        index : 0,
         name : '上郡',
         city : '定阳',
         belong : '秦',
@@ -17,9 +20,11 @@ let gameMap = [
         hero : '',
         sitX : 500,
         sitY : 200,
-
+        neighbor : [],
+        point : 1 ,
     },
     {
+        index : 0,
         name : '汉中',
         city : '南郡',
         belong : '秦',
@@ -27,9 +32,11 @@ let gameMap = [
         hero : '',
         sitX : 450,
         sitY : 500,
-
+        neighbor : [],
+        point : 1 ,
     },
     {
+        index : 0,
         name : '巴蜀',
         city : '成都',
         belong : '秦',
@@ -37,9 +44,11 @@ let gameMap = [
         hero : '司马错',
         sitX : 300,
         sitY : 600,
-
+        neighbor : [],
+        point : 1 ,
     },
     {
+        index : 0,
         name : '河东',
         city : '咸阳',
         belong : '秦',
@@ -47,9 +56,11 @@ let gameMap = [
         hero : '',
         sitX : 520,
         sitY : 350,
-
+        neighbor : [],
+        point : 1 ,
     },
     {
+        index : 0,
         name : '陇西',
         city : '咸阳',
         belong : '秦',
@@ -57,9 +68,11 @@ let gameMap = [
         hero : '',
         sitX : 300,
         sitY : 200,
-
+        neighbor : [],
+        point : 1 ,
     },
     {
+        index : 0,
         name : '内史',
         city : '咸阳',
         belong : '楚',
@@ -67,9 +80,11 @@ let gameMap = [
         hero : '',
         sitX : 300,
         sitY : 200,
-
+        neighbor : [],
+        point : 1 ,
     },
     {
+        index : 0,
         name : '内史',
         city : '咸阳',
         belong : '楚',
@@ -77,9 +92,11 @@ let gameMap = [
         hero : '',
         sitX : 300,
         sitY : 200,
-
+        neighbor : [],
+        point : 1 ,
     },
     {
+        index : 0,
         name : '内史',
         city : '咸阳',
         belong : '楚',
@@ -87,9 +104,11 @@ let gameMap = [
         hero : '',
         sitX : 300,
         sitY : 200,
-
+        neighbor : [],
+        point : 1 ,
     },
     {
+        index : 0,
         name : '内史',
         city : '咸阳',
         belong : '楚',
@@ -97,9 +116,11 @@ let gameMap = [
         hero : '',
         sitX : 300,
         sitY : 200,
-
+        neighbor : [],
+        point : 1 ,
     },
     {
+        index : 0,
         name : '内史',
         city : '咸阳',
         belong : '楚',
@@ -107,6 +128,7 @@ let gameMap = [
         hero : '',
         sitX : 300,
         sitY : 200,
-
+        neighbor : [],
+        point : 1 ,
     },
 ]

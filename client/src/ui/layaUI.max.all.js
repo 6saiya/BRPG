@@ -80,6 +80,29 @@ var LogGameUI=(function(_super){
 		LogGameUI.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":0,"x":0,"skin":"map/bg_logGame.png","name":"bg"}},{"type":"Box","props":{"y":430,"x":490,"name":"login"},"child":[{"type":"Button","props":{"y":130,"x":-14,"stateNum":1,"skin":"logon/btn_login.png","name":"login"}},{"type":"Button","props":{"y":132,"x":167,"stateNum":1,"skin":"logon/btn_logup.png","name":"logup"}},{"type":"TextInput","props":{"y":-20,"x":-15,"width":298,"skin":"comp/textinput.png","name":"userName","height":42}},{"type":"TextInput","props":{"y":41,"x":-16,"width":301,"skin":"comp/textinput.png","name":"password","height":40}}]},{"type":"Box","props":{"y":433,"x":469,"name":"logup"},"child":[{"type":"Button","props":{"y":123,"x":11,"stateNum":1,"skin":"logon/btn_fanhui.png","name":"back"}},{"type":"Button","props":{"y":129,"x":189,"stateNum":1,"skin":"logon/btn_logup.png","name":"logup"}},{"type":"TextInput","props":{"y":-24,"x":6,"width":298,"skin":"comp/textinput.png","name":"userName","height":41}},{"type":"TextInput","props":{"y":39,"x":7,"width":301,"skin":"comp/textinput.png","name":"password","height":39}}]},{"type":"Button","props":{"y":416,"x":855,"skin":"comp/button.png","name":"test","label":"测试按钮"}}]};
 		return LogGameUI;
 	})(View);
+var MatchUI=(function(_super){
+		function MatchUI(){
+			
+		    this.heng=null;
+		    this.hengB=null;
+		    this.zong=null;
+		    this.zongB=null;
+
+			MatchUI.__super.call(this);
+		}
+
+		CLASS$(MatchUI,'ui.main.MatchUI',_super);
+		var __proto__=MatchUI.prototype;
+		__proto__.createChildren=function(){
+		    
+			laya.ui.Component.prototype.createChildren.call(this);
+			this.createView(MatchUI.uiView);
+
+		}
+
+		MatchUI.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":172,"x":264,"var":"heng","skin":"country/country0.png"}},{"type":"Image","props":{"y":171,"x":265,"var":"hengB","skin":"country/countryBoard.png"}},{"type":"Image","props":{"y":183,"x":828,"var":"zong","skin":"country/country6.png"}},{"type":"Image","props":{"y":182,"x":829,"var":"zongB","skin":"country/countryBoard.png"}},{"type":"Button","props":{"y":223,"x":488,"stateNum":1,"skin":"home/btn_PVP.png"}}]};
+		return MatchUI;
+	})(View);
 var MoneyPageUI=(function(_super){
 		function MoneyPageUI(){
 			

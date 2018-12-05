@@ -3,7 +3,7 @@ var socket = io();
 
 // 加入房间
 socket.on('connect', function () {
-    socket.emit('join', [user.nickName, user.roomID]);
+    socket.emit('join', [user.id, user.roomID]);
 });
 
 // 监听消息
@@ -17,8 +17,7 @@ socket.on('sys', function (sysMsg, users) {
 });
 
 // 发送消息
-socket.send('msg');
-
+// socket.send('msg');
 
 // 退出房间
-socket.emit('leave');
+// socket.emit('leave');
