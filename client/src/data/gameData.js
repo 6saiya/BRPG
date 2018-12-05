@@ -38,3 +38,4 @@ let rountGame = 0;
 // 当前玩家
 let nowPlayer = '合纵'
 
+let CountryPoliceData = [3,6,3,3,3,3]

@@ -1,15 +1,18 @@
 var Fight = (function (_super) {
 	function Fight(heroMessage, enemyMessage, bg) {
-		Fight.super(this);
+		Fight.super(this)
 		this.bg = bg
-		this.init();
-		console.log(this._childs)
+		this.init()
+		console.log(this._childs[5]._childs[5].mapindex)
 	}
 	Laya.class(Fight, "Fight", _super);
 
 	var _proto = Fight.prototype;
 	//初始化
 	_proto.init = function () {
+		this.police = new PoliceBox(this.police)
+		let cardbox = new CardBox
+		this.addChild(cardbox);
 		this.refresh()
 	}
 
@@ -22,7 +25,7 @@ var Fight = (function (_super) {
 
 		// 监听信息
 		socket.on('msg', function (userName, msg) {
-			console.log(userName, msg);
+			console.log(userName, msg)
 			// 判断是否为自己行动
 			if (msg.userName != user.name) {
 				addHistroy()
@@ -46,30 +49,27 @@ var Fight = (function (_super) {
 	 * 刷新页面
 	 */
 	_proto.refresh = function () {
+		// 刷新天时、回合
+		this.getChildByName('rount').x = 83 + rountGame * 20
+		this.getChildByName('sky').x = nowPlayer == '合纵'? 414 : 380
+		this.getChildByName('sky').skin = nowPlayer == '合纵'? 'fight/img_fangzi.png' :'fight/img_fangzi.png'
+
+		// 刷新地图
 		if (this.getChildByName('mapSprint')) {
-			this.getChildByName('mapSprint').removeSelf();
+			this.getChildByName('mapSprint').removeSelf()
 		}
 		let mapSprint = new Laya.Sprite();
 		mapSprint.name = 'mapSprint'
 		this.addChild(mapSprint)
-
-		let map = [];
 		for (let i = 0; i < gameMap.length; i++) {
-			let thismap = new Laya.Box()
-			for (let j = 0; j < gameMap[i].solid; j++) {
-				let solid = new Laya.Sprite();
-				solid.loadImage("country/country0.png", gameMap[i].sitX+j*30, gameMap[i].sitY+j*30);
-				thismap.addChild(solid)
-				if (gameMap[i].hero) {
-					let hero = new Laya.Sprite();
-					hero.loadImage("comp/generals02-01.png", gameMap[i].sitX+j*30, gameMap[i].sitY+j*30);
-					thismap.addChild(hero)
-				}
-				
-			}
-			map.push(thismap);
-			mapSprint.addChild(map[i])
+			let mapbox = new MapBox(i)
+			mapSprint.addChild(mapbox)
 		}
+
+		// 刷新各国政治
+		this.police.resit()
+		// 刷新手牌
+		this.getChildByName('cardbox').refresh()
 	}
 
 	return Fight;

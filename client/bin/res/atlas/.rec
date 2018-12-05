@@ -158,12 +158,19 @@ P FE9BE98E textinput.png
 P BDA71F88 textinput1.png
 D country
 P 1FEC9D40 country0.png
+P 98CCEFF6 country0_min.png
 P 1CDE24C7 country1.png
+P 0C2C74D8 country1_min.png
 P 769ADC88 country2.png
+P 927261C9 country2_min.png
 P 19D8CB46 country3.png
+P A6A1F2A7 country3_min.png
 P 8CA72867 country4.png
+P 330D2574 country4_min.png
 P 4DD594D1 country5.png
+P C5EF71AA country5_min.png
 P D9D5331B country6.png
+P DCB04DED country6_min.png
 P E636FBBF countryBoard.png
 P 6A7B9867 server1.png
 D fight
