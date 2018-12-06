@@ -1,17 +1,38 @@
-## 运行工程前要先配置环境
-    node、git、mysql安装
+## Develop 
 
+### init 
+    
+    install node、git、mysql
+
+    database confige modify ./server/confige/db.js
+    there is sample database in folder named sql
     准备数据库环境 —— confige文件夹db.js配置，数据库在sql文件夹下
 
-## 架构
+### run
 
-![avatar](./doc/img/framework.png)
+    run win-start.bat in windows
 
-## 捐款
+    run mac-start.sh in mac
+
+### document
+
+    there are document in doc folder
+
+    any question you can ask to me by emial 1271140900@qq.com
+
+## Architecture
+
+![avatar](./doc/img/Architecture.png)
+
+## Contribution
+
+please contribution or help us work because we do it without money and are so poor
 
 穷人要饭 OTZ 
 接受各种py交易
 
 ## Help
 
-求美工，求程序猿，求运营，求金主爸爸 ○|￣|_
+we help someone will help us to finish programe likes Artists、Designers、Programming、Operations、Sponsors……
+
+求美工，求设计师，求程序猿，求运营，求金主爸爸 ○|￣|_
