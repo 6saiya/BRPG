@@ -33,6 +33,6 @@ please contribution or help us work because we do it without money and are so po
 
 ## Help
 
-we help someone will help us to finish programe likes Artists、Designers、Programming、Operations、Sponsors……
+we hope someone will help us to finish programe likes Artists、Designers、Programmers、Operaters、Sponsors……
 
 求美工，求设计师，求程序猿，求运营，求金主爸爸 ○|￣|_
