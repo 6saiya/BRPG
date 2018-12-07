@@ -14,18 +14,28 @@ var Match = (function(_super){
     _proto.init = function(){
         this.hengB.visible = false; 
         this.zongB.visible = false; 
-        
+        socket.send('getRoomMsg');
+        socket.on('roomMsg', function(msg) {
+            console.log('roomMsg is ')
+            console.log(typeof(msg))
+            console.log(msg)
+        })
     }
 
-    //登陆按钮
+    //选择按钮
     _proto.choiceheng = function(){
         this.hengB.visible = true; 
+        socket.send('heng');
+
         // LayaSample.Fight = new Fight();
         // Laya.stage.addChild(LayaSample.Fight);
         // LayaSample.Match.removeSelf();
     }
     _proto.choicezong = function(){
         this.zongB.visible = true; 
+        socket.send('zong');
+
+
         // LayaSample.Fight = new Fight();
         // Laya.stage.addChild(LayaSample.Fight);
         // LayaSample.Match.removeSelf();

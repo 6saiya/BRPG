@@ -2,13 +2,41 @@ var IO = require('socket.io');
 
 // 房间用户名单
 var roomInfo = [];
+for (let i = 0; i < 10; i++) {
+    roomInfo.push({
+        heng : '',
+        zong : 
+    })
+}
+let roomshow = function() {
+    let s = ''
+    let row = '-------------------'
+    console.log(row)
+    for (let i = 0; i < 5; i++) {
+        s += ' | ' 
+        if (roomInfo[i]) {
+            s += roomInfo[i]
+        } 
+    }
+    console.log(s)
+    s = ''
+    console.log(row)
+    for (let i = 5; i < 10; i++) {
+        s += ' | ' 
+        if (roomInfo[i]) {
+            s += roomInfo[i]
+        } 
+    }
+    console.log(s)
+    console.log(row)
+}
 
 module.exports = {
-    socketOn: function (server) {
+    socketOn : function (server) {
         // 创建socket服务
         var socketIO = IO(server);
         socketIO.on('connection', function (socket) {
-            // socketIO.sockets.socket(socketId).emit('message', 'for your eyes only');
+            //socket(socketId).emit('message', 'for your eyes only');
             var user = "";
             var roomID = 1;
             socket.on('join', function (msg) {
@@ -50,9 +78,13 @@ module.exports = {
                 if (roomInfo[roomID].indexOf(user) === -1) {
                     return false;
                 }
-                socketIO.to(roomID).emit('msg', user, msg);
+                if (msg == 'getRoomMsg') {
+                    roomshow()
+                    socketIO.to(roomID).emit('roomMsg', user, roomInfo[roomID]);
+                }
             });
         });
-    }
+    },
+    
 };
 
