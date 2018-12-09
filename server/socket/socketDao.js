@@ -5,7 +5,8 @@ var roomInfo = [];
 for (let i = 0; i < 10; i++) {
     roomInfo.push({
         heng : '',
-        zong : 
+        zong : '',
+        ob : []
     })
 }
 let roomshow = function() {
@@ -15,7 +16,11 @@ let roomshow = function() {
     for (let i = 0; i < 5; i++) {
         s += ' | ' 
         if (roomInfo[i]) {
-            s += roomInfo[i]
+            s += roomInfo[i].heng
+            s += ' vs '
+            if (roomInfo[i].zong) {
+                s += roomInfo[i].zong
+            }
         } 
     }
     console.log(s)
@@ -24,7 +29,11 @@ let roomshow = function() {
     for (let i = 5; i < 10; i++) {
         s += ' | ' 
         if (roomInfo[i]) {
-            s += roomInfo[i]
+            s += roomInfo[i].heng
+            s += ' vs '
+            if (roomInfo[i].zong) {
+                s += roomInfo[i].zong
+            }
         } 
     }
     console.log(s)
@@ -48,7 +57,8 @@ module.exports = {
                 if (!roomInfo[roomID]) {
                     roomInfo[roomID] = [];
                 }
-                roomInfo[roomID].push(user);
+                // roomInfo[roomID].push(user);
+                roomInfo[roomID].heng = user;
 
                 socket.join(roomID); // 加入房间
                 // 通知房间内人员
@@ -75,9 +85,9 @@ module.exports = {
             // 接收用户消息,发送相应的房间
             socket.on('message', function (msg) {
                 // 验证如果用户不在房间内则不给发送
-                if (roomInfo[roomID].indexOf(user) === -1) {
-                    return false;
-                }
+                // if (roomInfo[roomID].indexOf(user) === -1) {
+                //     return false;
+                // }
                 if (msg == 'getRoomMsg') {
                     roomshow()
                     socketIO.to(roomID).emit('roomMsg', user, roomInfo[roomID]);
