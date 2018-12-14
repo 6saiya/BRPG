@@ -3,19 +3,19 @@ var socket = io();
 
 // 加入房间
 socket.on('connect', function () {
-    socket.emit('join', [user.id, user.roomID]);
+    socket.emit('join', [user.id, 9 ,'hall']);
 });
 
 // 监听消息
 socket.on('msg', function (userName, msg) {
-    console.log(msg);
-    console.log(userName);
+    // console.log(msg);
+    // console.log(userName);
 });
 
 // 监听系统消息
 socket.on('sys', function (sysMsg, users) {
-    console.log(users);
-    console.log(sysMsg);
+    // console.log(users);
+    // console.log(sysMsg);
 });
 
 // 发送消息

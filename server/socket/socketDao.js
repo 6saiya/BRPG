@@ -2,68 +2,50 @@ var IO = require('socket.io');
 
 // 房间用户名单
 var roomInfo = [];
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 9; i++) {
     roomInfo.push({
-        heng : '',
-        zong : '',
-        ob : []
+        heng: '',
+        zong: '',
+        ob: []
     })
 }
-let roomshow = function() {
-    let s = ''
-    let row = '-------------------'
-    console.log(row)
-    for (let i = 0; i < 5; i++) {
-        s += ' | ' 
-        if (roomInfo[i]) {
-            s += roomInfo[i].heng
-            s += ' vs '
-            if (roomInfo[i].zong) {
-                s += roomInfo[i].zong
-            }
-        } 
-    }
-    console.log(s)
-    s = ''
-    console.log(row)
-    for (let i = 5; i < 10; i++) {
-        s += ' | ' 
-        if (roomInfo[i]) {
-            s += roomInfo[i].heng
-            s += ' vs '
-            if (roomInfo[i].zong) {
-                s += roomInfo[i].zong
-            }
-        } 
-    }
-    console.log(s)
-    console.log(row)
-}
+roomInfo[9] = []
+// 大厅用户 大厅是9房间
 
 module.exports = {
-    socketOn : function (server) {
+    socketOn: function (server) {
         // 创建socket服务
         var socketIO = IO(server);
         socketIO.on('connection', function (socket) {
             //socket(socketId).emit('message', 'for your eyes only');
             var user = "";
-            var roomID = 1;
+            var roomID = 9;
             socket.on('join', function (msg) {
                 console.log("test msg:");
                 console.log(msg);
                 user = msg[0];
                 roomID = msg[1];
-                // 将用户昵称加入房间名单中
-                if (!roomInfo[roomID]) {
-                    roomInfo[roomID] = [];
+                let sit = msg[2];
+                console.log(roomID)
+                if (roomID == 9) {
+                    // 将用户昵称加入房间名单中
+                    roomInfo[roomID].push(user);
+                } else {
+                    if (sit == 'heng') {
+                        roomInfo[roomID].heng = user
+                    } else if (sit == 'zong') {
+                        roomInfo[roomID].zong = user
+                    }
                 }
-                // roomInfo[roomID].push(user);
-                roomInfo[roomID].heng = user;
-
                 socket.join(roomID); // 加入房间
                 // 通知房间内人员
-                socketIO.to(roomID).emit('sys', user + '加入了房间', roomInfo[roomID]);
-                console.log(user + '加入了' + roomID);
+                socketIO.to(roomID).emit('sys', user + '加入了游戏', roomInfo[roomID]);
+
+                roomshow()
+
+                if (roomInfo[roomID].heng && roomInfo[roomID].zong) {
+                    socketIO.to(roomID).emit('startGame')
+                }
             });
 
             socket.on('leave', function () {
@@ -72,9 +54,22 @@ module.exports = {
 
             socket.on('disconnect', function () {
                 // 从房间名单中移除
-                var index = roomInfo[roomID].indexOf(user);
-                if (index !== -1) {
-                    roomInfo[roomID].splice(index, 1);
+                if (roomID == 9) {
+                    let index = roomInfo[roomID].indexOf(user);
+                    if (index !== -1) {
+                        roomInfo[roomID].splice(index, 1);
+                    }
+                } else {
+                    if (roomInfo[roomID].heng == user) {
+                        roomInfo[roomID].heng = ''
+                    } else if (roomInfo[roomID].zong == user) {
+                        roomInfo[roomID].zong = ''
+                    } else {
+                        let index = roomInfo[roomID].ob.indexOf(user);
+                        if (index !== -1) {
+                            roomInfo[roomID].ob.splice(index, 1);
+                        }
+                    }
                 }
 
                 socket.leave(roomID); // 退出房间
@@ -89,12 +84,64 @@ module.exports = {
                 //     return false;
                 // }
                 if (msg == 'getRoomMsg') {
-                    roomshow()
-                    socketIO.to(roomID).emit('roomMsg', user, roomInfo[roomID]);
+                    // roomshow()
+                    // socketIO.to(roomID).emit('roomMsg', roomInfo);
+                    socketIO.emit('roomMsg', roomInfo);
                 }
+
             });
         });
     },
-    
+
 };
 
+
+
+
+
+
+
+
+let roomshow = function () {
+    let s = ''
+    let row = '-------------------'
+    console.log(row)
+    for (let i = 0; i < 3; i++) {
+        s += ' | '
+        if (roomInfo[i]) {
+            s += roomInfo[i].heng
+            s += ' vs '
+            if (roomInfo[i].zong) {
+                s += roomInfo[i].zong
+            }
+        }
+    }
+    console.log(s)
+    s = ''
+    console.log(row)
+    for (let i = 3; i < 6; i++) {
+        s += ' | '
+        if (roomInfo[i]) {
+            s += roomInfo[i].heng
+            s += ' vs '
+            if (roomInfo[i].zong) {
+                s += roomInfo[i].zong
+            }
+        }
+    }
+    console.log(s)
+    s = ''
+    console.log(row)
+    for (let i = 6; i < 9; i++) {
+        s += ' | '
+        if (roomInfo[i]) {
+            s += roomInfo[i].heng
+            s += ' vs '
+            if (roomInfo[i].zong) {
+                s += roomInfo[i].zong
+            }
+        }
+    }
+    console.log(s)
+    console.log(row)
+}
