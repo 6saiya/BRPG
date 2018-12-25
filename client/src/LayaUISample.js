@@ -3,18 +3,18 @@
         //初始化引擎
         Laya.init(1280,720);
         Laya.Stat.show(0,0);
-        Laya.stage.scaleMode = Laya.Stage.SCALE_NOSCALE;
-        Laya.stage.alignH = Laya.Stage.ALIGN_CENTER;
-        Laya.stage.alignV = Laya.Stage.ALIGN_MIDDLE;
+        Laya.stage.scaleMode  = Laya.Stage.SCALE_NOSCALE;
+        Laya.stage.alignH     = Laya.Stage.ALIGN_CENTER;
+        Laya.stage.alignV     = Laya.Stage.ALIGN_MIDDLE;
         Laya.stage.screenMode = Laya.Stage.SCREEN_NONE;
-        Laya.stage.scaleMode = "showall";
+        Laya.stage.scaleMode  = "showall";
         Laya.stage.screenMode = "horizontal";
         //设置stage颜色   
         Laya.stage.bgColor = "#ffffff";
         //加载资源
-        // Laya.loader.load("res/atlas/logon.atlas",Laya.Handler.create(this,onLoaded),null,Laya.Loader.ATLAS)
+        Laya.loader.load("res/atlas/logon.atlas",Laya.Handler.create(this,onLoaded),null,Laya.Loader.ATLAS)
         
-        test();
+        // test();
 
     })();
     function onLoaded(){

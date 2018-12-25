@@ -1,13 +1,13 @@
 var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
+var path         = require('path');
+var favicon      = require('serve-favicon');
+var logger       = require('morgan');
 var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var bodyParser   = require('body-parser');
 
 var routes = require('./routes/index');
-// var game = require('./routes/game');
-// var logon = require('./routes/logon');
+var game   = require('./routes/game');
+var logon  = require('./routes/logon');
 
 var app = express();
 
@@ -24,18 +24,18 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client')));
 
 // 输出日志到目录
-var fs = require('fs');
-var accessLogStream = fs.createWriteStream(__dirname + '/log/access.log', {flags: 'a',  encoding:'utf8'}); // 记得要先把目录建好，不然会报错
+var fs              = require('fs');
+var accessLogStream = fs.createWriteStream(__dirname + '/log/access.log', {flags: 'a',  encoding:'utf8'});  // 记得要先把目录建好，不然会报错
 app.use(logger('combined', {stream: accessLogStream}));
 
 app.use('/', routes);
-// app.use('/game', game); // 自定义game路径
-// app.use('/logon', logon); // 自定义logon路径
+app.use('/game', game); // 自定义game路径
+app.use('/logon', logon); // 自定义logon路径
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
+  var err        = new Error('Not Found');
+      err.status = 404;
   next(err);
 });
 
@@ -48,7 +48,7 @@ if (app.get('env') === 'development') {
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,
-      error: err
+      error  : err
     });
   });
 }
@@ -59,7 +59,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
-    error: {}
+    error  : {}
   });
 });
 
